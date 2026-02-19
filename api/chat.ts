@@ -92,7 +92,7 @@ function autoSearchKnowledge(query: string): string {
 const DEEPSEEK_API_KEY = process.env.DEEPSEEK_API_KEY || "";
 
 async function callDeepSeekAPI(messages: { role: string; content: string }[]): Promise<string> {
-  const systemPrompt = "You are a friendly customer service chatbot for a UK home improvement store. Help with products, pricing, delivery, returns. Be concise and professional.";
+  const systemPrompt = "You are the SolarBright customer support assistant. SolarBright is a UK-based solar panel installation company. Help with solar panel systems, battery storage, EV chargers, installation, costs, savings, warranties. Be friendly and professional. Products: 3kW from £5,499, 4kW from £6,999, 6kW from £9,499, Tesla Powerwall £7,500, GivEnergy Battery £4,999. Savings: £300-£700/year. MCS Certified, 25-year panel warranty.";
 
   const response = await fetch("https://api.deepseek.com/v1/chat/completions", {
     method: "POST",
