@@ -3,8 +3,5 @@
     "api/*.ts": {
       "runtime": "nodejs18.x"
     }
-  },
-  "typescript": {
-    "ignoreBuildErrors": false
   }
 }
