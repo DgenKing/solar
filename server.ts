@@ -95,7 +95,10 @@ Bun.serve({
       try {
         const html = readFileSync("./public/index.html", "utf-8");
         return new Response(html, {
-          headers: { "Content-Type": "text/html" }
+          headers: {
+            "Content-Type": "text/html",
+            "Cache-Control": "no-cache, no-store, must-revalidate"
+          }
         });
       } catch {
         return new Response("Not Found", { status: 404 });
@@ -107,7 +110,10 @@ Bun.serve({
       try {
         const html = readFileSync("./public/chat.html", "utf-8");
         return new Response(html, {
-          headers: { "Content-Type": "text/html" }
+          headers: {
+            "Content-Type": "text/html",
+            "Cache-Control": "no-cache, no-store, must-revalidate"
+          }
         });
       } catch {
         return new Response("Not Found", { status: 404 });
