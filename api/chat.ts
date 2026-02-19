@@ -228,7 +228,8 @@ export default async function handler(req: Request) {
   }
 
   try {
-    const body = await req.json() as ChatRequest;
+    const bodyText = await req.text();
+    const body = JSON.parse(bodyText) as ChatRequest;
     const { sessionId, message } = body;
 
     if (!sessionId || !message) {
