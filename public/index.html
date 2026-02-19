@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SolarBright - Solar Panel Installation UK</title>
+  <meta name="description" content="Professional solar panel installation in the UK. Reduce energy bills with MCS certified solar systems. Free survey and quote.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -14,28 +19,49 @@
     :root {
       --primary: #f59e0b;
       --primary-dark: #d97706;
-      --secondary: #1e3a5f;
-      --text: #1f2937;
-      --text-light: #6b7280;
+      --primary-light: #fbbf24;
+      --secondary: #0f172a;
+      --secondary-light: #1e293b;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --text-muted: #94a3b8;
       --bg: #ffffff;
-      --bg-secondary: #f9fafb;
+      --bg-secondary: #f8fafc;
+      --bg-alt: #f1f5f9;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --transition: all 0.3s ease;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       line-height: 1.6;
       color: var(--text);
       background: var(--bg);
+      overflow-x: hidden;
     }
 
     /* Header */
     header {
-      background: var(--bg);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-sm);
+      position: relative;
       position: fixed;
       width: 100%;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
     }
 
     .header-content {
@@ -54,12 +80,30 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      text-decoration: none;
     }
 
-    .logo svg {
-      width: 32px;
-      height: 32px;
-      fill: var(--primary);
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-icon svg {
+      width: 22px;
+      height: 22px;
+      fill: white;
+    }
+
+    .logo span {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     nav {
@@ -72,126 +116,268 @@
       text-decoration: none;
       color: var(--text);
       font-weight: 500;
-      transition: color 0.2s;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
     }
 
     nav a:hover {
       color: var(--primary);
     }
 
+    nav a:hover::after {
+      width: 100%;
+    }
+
     .cta-button {
-      background: var(--primary);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
       color: white;
       padding: 0.75rem 1.5rem;
-      border-radius: 8px;
+      border-radius: var(--radius-md);
       text-decoration: none;
       font-weight: 600;
-      transition: background 0.2s;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      box-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);
     }
 
     .cta-button:hover {
-      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
       color: white;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu-btn {
+      display: none;
+      background: #f1f5f9;
+      border: none;
+      cursor: pointer;
+      padding: 0.75rem;
+      border-radius: 8px;
+      z-index: 1001;
+    }
+
+    .mobile-menu-btn span {
+      display: block;
+      width: 24px;
+      height: 3px;
+      background: #1e293b;
+      margin: 5px 0;
+      transition: var(--transition);
+      border-radius: 2px;
     }
 
     /* Hero */
     .hero {
-      background: linear-gradient(135deg, var(--secondary) 0%, #2d4a6f 100%);
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 50%, #334155 100%);
       color: white;
-      padding: 8rem 2rem 6rem;
+      padding: 10rem 2rem 7rem;
       text-align: center;
-      margin-top: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.5;
+    }
+
+    .hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    .hero-badge svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--primary-light);
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       margin-bottom: 1.5rem;
-      line-height: 1.2;
+      line-height: 1.15;
+      font-weight: 700;
+      animation: fadeInUp 0.6s ease-out 0.1s both;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .hero p {
       font-size: 1.25rem;
       opacity: 0.9;
       max-width: 600px;
-      margin: 0 auto 2rem;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+      animation: fadeInUp 0.6s ease-out 0.2s both;
     }
 
     .hero-buttons {
       display: flex;
       gap: 1rem;
       justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.6s ease-out 0.3s both;
     }
 
     .hero .cta-button {
-      background: var(--primary);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
       padding: 1rem 2rem;
       font-size: 1.1rem;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
     }
 
     .hero .secondary-button {
       background: transparent;
-      border: 2px solid white;
+      border: 2px solid rgba(255,255,255,0.3);
       padding: 1rem 2rem;
       font-size: 1.1rem;
-      border-radius: 8px;
+      border-radius: var(--radius-md);
       color: white;
       text-decoration: none;
       font-weight: 600;
-      transition: background 0.2s;
+      transition: var(--transition);
     }
 
     .hero .secondary-button:hover {
       background: rgba(255,255,255,0.1);
+      border-color: white;
       color: white;
+      transform: translateY(-2px);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* Stats */
     .stats {
       background: var(--bg-secondary);
       padding: 4rem 2rem;
+      margin-top: -3rem;
+      position: relative;
+      z-index: 10;
     }
 
     .stats-grid {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 2rem;
+      border-radius: var(--radius-lg);
       text-align: center;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .stat-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+
+    .stat-icon svg {
+      width: 28px;
+      height: 28px;
+      fill: var(--primary);
     }
 
     .stat-item h3 {
-      font-size: 2.5rem;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
+      font-size: 2.25rem;
+      color: var(--secondary);
+      margin-bottom: 0.25rem;
+      font-weight: 700;
     }
 
     .stat-item p {
       color: var(--text-light);
       font-weight: 500;
+      font-size: 0.95rem;
     }
 
     /* Services */
     .services {
-      padding: 6rem 2rem;
+      padding: 7rem 2rem;
       max-width: 1200px;
       margin: 0 auto;
     }
 
-    .section-title {
+    .section-header {
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
     }
 
-    .section-title h2 {
-      font-size: 2.5rem;
+    .section-header h2 {
+      font-size: 2.75rem;
       color: var(--secondary);
       margin-bottom: 1rem;
+      font-weight: 700;
     }
 
-    .section-title p {
+    .section-header p {
       color: var(--text-light);
-      font-size: 1.1rem;
+      font-size: 1.15rem;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
     .services-grid {
@@ -201,22 +387,25 @@
     }
 
     .service-card {
-      background: var(--bg);
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      transition: transform 0.2s;
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      border: 1px solid var(--border);
     }
 
     .service-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--primary);
     }
 
     .service-icon {
-      width: 60px;
-      height: 60px;
-      background: #fef3c7;
-      border-radius: 12px;
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(245, 158, 11, 0.05) 100%);
+      border-radius: var(--radius-md);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -230,28 +419,30 @@
     }
 
     .service-card h3 {
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       margin-bottom: 1rem;
       color: var(--secondary);
+      font-weight: 600;
     }
 
     .service-card p {
       color: var(--text-light);
+      line-height: 1.7;
     }
 
     /* How it works */
     .how-it-works {
       background: var(--bg-secondary);
-      padding: 6rem 2rem;
+      padding: 7rem 2rem;
     }
 
-    .how-it-works .section-title {
+    .how-it-works .section-header {
       max-width: 1200px;
-      margin: 0 auto 3rem;
+      margin: 0 auto 4rem;
     }
 
     .steps-grid {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -263,48 +454,69 @@
       position: relative;
     }
 
+    .step::after {
+      content: '';
+      position: absolute;
+      top: 32px;
+      right: -50%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary) 0%, transparent 100%);
+      opacity: 0.3;
+    }
+
+    .step:last-child::after {
+      display: none;
+    }
+
     .step-number {
-      width: 50px;
-      height: 50px;
-      background: var(--primary);
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
       color: white;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       font-weight: 700;
-      margin: 0 auto 1rem;
+      margin: 0 auto 1.5rem;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
     }
 
     .step h3 {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
       color: var(--secondary);
+      font-size: 1.2rem;
+      font-weight: 600;
     }
 
     .step p {
       color: var(--text-light);
-      font-size: 0.9rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
     }
 
     /* Benefits */
     .benefits {
-      padding: 6rem 2rem;
+      padding: 7rem 2rem;
       max-width: 1200px;
       margin: 0 auto;
     }
 
     .benefits-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 3rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
       align-items: center;
     }
 
     .benefits-content h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       color: var(--secondary);
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      line-height: 1.2;
     }
 
     .benefit-list {
@@ -315,7 +527,16 @@
       display: flex;
       align-items: flex-start;
       gap: 1rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: var(--bg-secondary);
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+    }
+
+    .benefit-list li:hover {
+      background: rgba(245, 158, 11, 0.05);
+      transform: translateX(5px);
     }
 
     .benefit-list svg {
@@ -326,132 +547,305 @@
       margin-top: 2px;
     }
 
+    .benefit-list strong {
+      color: var(--secondary);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .benefit-list span {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
     .benefits-image {
-      background: linear-gradient(135deg, var(--secondary) 0%, #2d4a6f 100%);
-      border-radius: 16px;
-      height: 400px;
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+      border-radius: var(--radius-xl);
+      height: 500px;
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .benefits-image::before {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.2) 0%, transparent 70%);
     }
 
     .benefits-image svg {
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
       fill: var(--primary);
-      opacity: 0.8;
+      opacity: 0.9;
+      position: relative;
+      z-index: 1;
     }
 
     /* CTA */
     .cta-section {
-      background: var(--primary);
-      padding: 4rem 2rem;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      padding: 5rem 2rem;
       text-align: center;
       color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2.5l5 4-5 4z' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E");
+    }
+
+    .cta-section > * {
+      position: relative;
+      z-index: 1;
     }
 
     .cta-section h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
+      font-weight: 700;
     }
 
     .cta-section p {
-      opacity: 0.9;
+      opacity: 0.95;
       margin-bottom: 2rem;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .cta-section .cta-button {
       background: var(--secondary);
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
 
     .cta-section .cta-button:hover {
-      background: #152a45;
+      background: var(--secondary-light);
+      transform: translateY(-2px);
     }
 
     /* Footer */
     footer {
       background: var(--secondary);
       color: white;
-      padding: 4rem 2rem 2rem;
+      padding: 5rem 2rem 2rem;
     }
 
     .footer-content {
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 3rem;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 4rem;
     }
 
-    .footer-brand h3 {
-      font-size: 1.5rem;
+    .footer-brand .logo {
+      color: white;
       margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+    }
+
+    .footer-brand .logo-icon {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     }
 
     .footer-brand p {
-      opacity: 0.8;
+      opacity: 0.75;
       margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .footer-social a:hover {
+      background: var(--primary);
+    }
+
+    .footer-social svg {
+      width: 20px;
+      height: 20px;
+      fill: white;
     }
 
     .footer-column h4 {
-      margin-bottom: 1rem;
-      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
     }
 
     .footer-column a {
       display: block;
       color: rgba(255,255,255,0.7);
       text-decoration: none;
-      margin-bottom: 0.5rem;
-      transition: color 0.2s;
+      margin-bottom: 0.75rem;
+      transition: var(--transition);
+      font-size: 0.95rem;
     }
 
     .footer-column a:hover {
       color: var(--primary);
+      transform: translateX(5px);
     }
 
     .footer-bottom {
       max-width: 1200px;
-      margin: 3rem auto 0;
+      margin: 4rem auto 0;
       padding-top: 2rem;
       border-top: 1px solid rgba(255,255,255,0.1);
       text-align: center;
-      opacity: 0.7;
+      opacity: 0.6;
       font-size: 0.9rem;
     }
 
     /* Responsive */
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       .hero h1 {
-        font-size: 2rem;
+        font-size: 2.75rem;
       }
 
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .steps-grid {
+      .stats-grid, .services-grid, .steps-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
       .benefits-grid {
+        gap: 3rem;
+      }
+
+      .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      .stats-grid, .services-grid, .steps-grid, .benefits-grid {
         grid-template-columns: 1fr;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+      }
+
+      .stats {
+        margin-top: 0;
+      }
+
+      .stat-card {
+        padding: 1.5rem;
+      }
+
+      .step::after {
+        display: none;
+      }
+
+      .benefits-image {
+        height: 350px;
       }
 
       .footer-content {
         grid-template-columns: 1fr;
+        gap: 2rem;
       }
 
       nav {
         display: none;
+      }
+
+      .header-content {
+        position: relative;
+      }
+
+      .mobile-menu-btn {
+        display: flex !important;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      /* Mobile Menu Dropdown */
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1rem;
+        box-shadow: var(--shadow-lg);
+        flex-direction: column;
+        gap: 0.5rem;
+        z-index: 999;
+      }
+
+      .mobile-menu.open {
+        display: flex;
+      }
+
+      .mobile-menu a {
+        padding: 0.75rem 1rem;
+        text-decoration: none;
+        color: var(--text);
+        font-weight: 500;
+        border-radius: var(--radius-sm);
+        transition: background 0.2s;
+      }
+
+      .mobile-menu a:hover {
+        background: var(--bg-secondary);
+        color: var(--primary);
+      }
+
+      .mobile-menu .cta-button {
+        text-align: center;
+        margin-top: 0.5rem;
+      }
+
+      .mobile-menu-btn.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .mobile-menu-btn.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .mobile-menu-btn.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
       }
     }
   </style>
@@ -459,12 +853,12 @@
 <body>
   <header>
     <div class="header-content">
-      <div class="logo">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-        </svg>
-        SolarBright
-      </div>
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <span>SolarBright</span>
+      </a>
       <nav>
         <a href="#services">Services</a>
         <a href="#how-it-works">How It Works</a>
@@ -472,12 +866,28 @@
         <a href="#contact">Contact</a>
         <a href="#" class="cta-button" onclick="openChat()">Get Free Quote</a>
       </nav>
+      <button class="mobile-menu-btn" aria-label="Menu" onclick="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="#services" onclick="closeMobileMenu()">Services</a>
+      <a href="#how-it-works" onclick="closeMobileMenu()">How It Works</a>
+      <a href="#benefits" onclick="closeMobileMenu()">Benefits</a>
+      <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+      <a href="#" class="cta-button" onclick="openChat();closeMobileMenu()">Get Free Quote</a>
+    </nav>
   </header>
 
   <section class="hero">
-    <h1>Power Your Home with Solar Energy</h1>
-    <p>Reduce your energy bills, earn money through exports, and help the environment with our professional solar panel installation.</p>
+    <div class="hero-badge">
+      <svg viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm-1 15l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z"/></svg>
+      MCS Certified Installers
+    </div>
+    <h1>Power Your Home with <span>Solar Energy</span></h1>
+    <p>Reduce your energy bills by up to 70%, earn money through exports, and help the environment with our professional solar panel installation.</p>
     <div class="hero-buttons">
       <a href="#" class="cta-button" onclick="openChat()">Chat with Us</a>
       <a href="#how-it-works" class="secondary-button">Learn More</a>
@@ -486,88 +896,100 @@
 
   <section class="stats">
     <div class="stats-grid">
-      <div class="stat-item">
-        <h3>2,500+</h3>
-        <p>Installations Completed</p>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+        </div>
+        <div class="stat-item">
+          <h3>2,500+</h3>
+          <p>Installations Completed</p>
+        </div>
       </div>
-      <div class="stat-item">
-        <h3>£600</h3>
-        <p>Average Annual Savings</p>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+        </div>
+        <div class="stat-item">
+          <h3>£600</h3>
+          <p>Average Annual Savings</p>
+        </div>
       </div>
-      <div class="stat-item">
-        <h3>25 Years</h3>
-        <p>Panel Warranty</p>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        </div>
+        <div class="stat-item">
+          <h3>25 Years</h3>
+          <p>Panel Warranty</p>
+        </div>
       </div>
-      <div class="stat-item">
-        <h3>98%</h3>
-        <p>Customer Satisfaction</p>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </div>
+        <div class="stat-item">
+          <h3>98%</h3>
+          <p>Customer Satisfaction</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="services" id="services">
-    <div class="section-title">
+    <div class="section-header">
       <h2>Our Services</h2>
-      <p>Comprehensive solar solutions for homes and businesses</p>
+      <p>Comprehensive solar solutions tailored to your needs, from residential homes to commercial properties</p>
     </div>
     <div class="services-grid">
       <div class="service-card">
         <div class="service-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 3L4 9v12h16V9l-8-6zm0 2.5L18 10v9H6v-9l6-4.5z"/>
-            <path d="M11 13h2v5h-2z"/>
-          </svg>
+          <svg viewBox="0 0 24 24"><path d="M12 3L4 9v12h16V9l-8-6zm0 2.5L18 10v9H6v-9l6-4.5z"/><path d="M11 13h2v5h-2z"/></svg>
         </div>
         <h3>Residential Solar</h3>
-        <p>Custom solar panel systems for your home. We handle everything from design to installation and grid connection.</p>
+        <p>Custom solar panel systems designed for your home. We handle everything from roof assessment to grid connection.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4zm8 16H6v-9h12v9z"/>
-          </svg>
+          <svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4zm8 16H6v-9h12v9z"/><path d="M13 10h-2v3H8v2h3v3h2v-3h3v-2h-3z"/></svg>
         </div>
         <h3>Battery Storage</h3>
-        <p>Store excess solar energy with battery systems. Maximise your usage and get backup power during outages.</p>
+        <p>Store excess solar energy with Tesla Powerwall or GivEnergy batteries. Maximise usage and get backup power.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/>
-            <path d="M7 12h2v5H7zm4-3h2v8h-2zm4-3h2v11h-2z"/>
-          </svg>
+          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/><path d="M7 12h2v5H7zm4-3h2v8h-2zm4-3h2v11h-2z"/></svg>
         </div>
         <h3>Commercial Solar</h3>
-        <p>Large-scale solar installations for businesses. Reduce overheads and demonstrate environmental commitment.</p>
+        <p>Large-scale solar installations for businesses. Reduce overheads and meet sustainability targets.</p>
       </div>
     </div>
   </section>
 
   <section class="how-it-works" id="how-it-works">
-    <div class="section-title">
+    <div class="section-header">
       <h2>How It Works</h2>
-      <p>Getting solar is easier than you think</p>
+      <p>Getting started with solar is simpler than you might think</p>
     </div>
     <div class="steps-grid">
       <div class="step">
         <div class="step-number">1</div>
         <h3>Free Survey</h3>
-        <p>We assess your roof and energy needs with a free, no-obligation survey.</p>
+        <p>We assess your roof and energy needs with a no-obligation survey, usually within 24 hours.</p>
       </div>
       <div class="step">
         <div class="step-number">2</div>
         <h3>Custom Design</h3>
-        <p>We design a system tailored to your home and energy requirements.</p>
+        <p>We design a system tailored to your home and energy requirements with a detailed quote.</p>
       </div>
       <div class="step">
         <div class="step-number">3</div>
         <h3>Professional Install</h3>
-        <p>MCS-certified engineers install your system in just 1-2 days.</p>
+        <p>MCS-certified engineers install your system in just 1-2 days with minimal disruption.</p>
       </div>
       <div class="step">
         <div class="step-number">4</div>
         <h3>Start Saving</h3>
-        <p>Connect to the grid and start saving on your energy bills immediately.</p>
+        <p>Connect to the grid and start saving on your energy bills immediately. It's that simple!</p>
       </div>
     </div>
   </section>
@@ -579,31 +1001,36 @@
         <ul class="benefit-list">
           <li>
             <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-            <div><strong>MCS Certified</strong> - All our installers are MCS certified for quality assurance</div>
+            <div>
+              <strong>MCS Certified</strong>
+              <span>All our installers are MCS certified for quality assurance</span>
+            </div>
           </li>
           <li>
             <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-            <div><strong>25-Year Warranty</strong> - All panels come with a 25-year performance guarantee</div>
+            <div>
+              <strong>25-Year Warranty</strong>
+              <span>All panels come with a 25-year performance guarantee</span>
+            </div>
           </li>
           <li>
             <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-            <div><strong>Government Grants</strong> - We help you access ECO4 and other available grants</div>
+            <div>
+              <strong>Government Grants</strong>
+              <span>We help you access ECO4 and other available grants</span>
+            </div>
           </li>
           <li>
             <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-            <div><strong>No Upfront Cost</strong> - Flexible financing options available from £0 deposit</div>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-            <div><strong>Free Maintenance</strong> - First year maintenance included with every installation</div>
+            <div>
+              <strong>Flexible Finance</strong>
+              <span>0% APR financing options available from £0 deposit</span>
+            </div>
           </li>
         </ul>
       </div>
       <div class="benefits-image">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 3L4 9v12h16V9l-8-6zm0 2.5L18 10v9H6v-9l6-4.5z"/>
-          <circle cx="12" cy="14" r="3"/>
-        </svg>
+        <svg viewBox="0 0 24 24"><path d="M12 3L4 9v12h16V9l-8-6zm0 2.5L18 10v9H6v-9l6-4.5z"/><circle cx="12" cy="14" r="3"/></svg>
       </div>
     </div>
   </section>
@@ -617,13 +1044,18 @@
   <footer id="contact">
     <div class="footer-content">
       <div class="footer-brand">
-        <h3>
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-            <path d="M12 3L4 9v12h16V9l-8-6z"/>
-          </svg>
-          SolarBright
-        </h3>
-        <p>Your trusted partner for solar energy in the UK. Professional installations since 2015.</p>
+        <a href="/" class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <span>SolarBright</span>
+        </a>
+        <p>Your trusted partner for solar energy in the UK. Professional MCS certified installations since 2015.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M16 4H8a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V8a4 4 0 0 0-4-4zm2 12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8z"/><circle cx="12" cy="12" r="3"/><circle cx="16.5" cy="7.5" r="1"/></svg></a>
+        </div>
       </div>
       <div class="footer-column">
         <h4>Services</h4>
@@ -643,11 +1075,11 @@
         <h4>Contact</h4>
         <a href="tel:08001234567">0800 123 4567</a>
         <a href="mailto:hello@solarbright.co.uk">hello@solarbright.co.uk</a>
-        <a href="#">Request Quote</a>
+        <a href="#" onclick="openChat()">Request Quote</a>
       </div>
     </div>
     <div class="footer-bottom">
-      &copy; 2025 SolarBright Ltd. All rights reserved. MCS Certified Installer.
+      &copy; 2025 SolarBright Ltd. All rights reserved. MCS Certified Installer #MCS12345
     </div>
   </footer>
 
@@ -660,6 +1092,20 @@
         chatToggle.classList.add('hidden');
       }
       if (event) event.preventDefault();
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const btn = document.querySelector('.mobile-menu-btn');
+      menu.classList.toggle('open');
+      btn.classList.toggle('open');
+    }
+
+    function closeMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const btn = document.querySelector('.mobile-menu-btn');
+      menu.classList.remove('open');
+      btn.classList.remove('open');
     }
   </script>
 
@@ -680,7 +1126,7 @@
       </button>
     </div>
     <div class="chat-messages" id="chatMessages">
-      <div class="welcome-message"><h3>Hi! I'm your Solar Advisor</h3><p>I can help with solar panels, batteries, savings, and more</p></div>
+      <div class="welcome-message"><h3>Hi! I'm your Solar Advisor</h3><p>Ask me about solar panels, battery storage, savings, or installation. I'm here to help!</p></div>
     </div>
     <div class="typing-indicator" id="typingIndicator"><span></span><span></span><span></span></div>
     <div class="chat-input-area">
@@ -692,39 +1138,51 @@
   </div>
 
   <style>
-    .chat-toggle{position:fixed;bottom:20px;right:20px;width:60px;height:60px;border-radius:50%;background:var(--primary);border:none;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.15);display:flex;align-items:center;justify-content:center;z-index:1000;transition:transform 0.2s}
-    .chat-toggle:hover{transform:scale(1.05)}
+    :root {
+      --user-bubble: #f59e0b;
+      --bot-bubble: #f1f5f9;
+      --user-text: #ffffff;
+      --bot-text: #1e293b;
+    }
+    .chat-toggle{position:fixed;bottom:20px;right:20px;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#f59e0b,#d97706);border:none;cursor:pointer;box-shadow:0 4px 20px rgba(245,158,11,0.4);display:flex;align-items:center;justify-content:center;z-index:1000;transition:transform 0.2s}
+    .chat-toggle:hover{transform:scale(1.1)}
     .chat-toggle.hidden{display:none}
     .chat-toggle svg{width:28px;height:28px;fill:white}
-    .chat-panel{position:fixed;bottom:90px;right:20px;width:450px;height:600px;background:var(--bg);border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.12);display:flex;flex-direction:column;z-index:1000;opacity:0;transform:translateY(20px) scale(0.95);pointer-events:none;transition:opacity 0.2s,transform 0.2s}
+    .chat-panel{position:fixed;bottom:90px;right:20px;width:400px;height:550px;background:#ffffff;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,0.15);display:flex;flex-direction:column;z-index:1000;opacity:0;transform:translateY(20px) scale(0.95);pointer-events:none;transition:all 0.3s ease}
     .chat-panel.open{opacity:1;transform:translateY(0) scale(1);pointer-events:all}
-    .chat-header{padding:16px;background:var(--primary);color:white;border-radius:12px 12px 0 0;display:flex;align-items:center;gap:12px}
-    .chat-header-avatar{width:36px;height:36px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center}
-    .chat-header-avatar svg{width:20px;height:20px;fill:white}
+    .chat-header{padding:16px 20px;background:linear-gradient(135deg,#0f172a,#1e293b);color:white;border-radius:16px 16px 0 0;display:flex;align-items:center;gap:12px}
+    .chat-header-avatar{width:40px;height:40px;background:linear-gradient(135deg,#f59e0b,#fbbf24);border-radius:50%;display:flex;align-items:center;justify-content:center}
+    .chat-header-avatar svg{width:22px;height:22px;fill:#0f172a}
     .chat-header-info{flex:1}
     .chat-header-title{font-weight:600;font-size:15px}
-    .chat-header-status{font-size:12px;opacity:0.85}
+    .chat-header-status{font-size:12px;opacity:0.85;color:#10b981}
     .chat-close{background:none;border:none;cursor:pointer;padding:4px}
     .chat-close svg{width:20px;height:20px;fill:white;opacity:0.8}
-    .chat-messages{flex:1;overflow-y:auto;overflow-x:hidden;padding:16px;padding-bottom:20px;display:flex;flex-direction:column;gap:12px}
-    .message{max-width:85%;padding:10px 14px;border-radius:16px;font-size:14px;line-height:1.5;word-wrap:break-word}
-    .message.user{align-self:flex-end;background:var(--user-bubble);color:var(--user-text);border-bottom-right-radius:4px}
-    .message.bot{align-self:flex-start;background:var(--bot-bubble);color:var(--bot-text);border-bottom-left-radius:4px}
-    .chat-input-area{padding:12px 16px;border-top:1px solid var(--border);display:flex;gap:8px}
-    .chat-input{flex:1;padding:10px 14px;border:1px solid var(--border);border-radius:20px;font-size:14px;outline:none;resize:vertical;min-height:40px;max-height:120px;font-family:inherit;overflow-y:auto;line-height:1.4}
-    .chat-input:focus{border-color:var(--primary)}
-    .chat-send{width:40px;height:40px;border-radius:50%;background:var(--primary);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-    .chat-send:hover{background:var(--primary-hover)}
+    .chat-messages{flex:1;overflow-y:auto;overflow-x:hidden;padding:16px;padding-bottom:20px;display:flex;flex-direction:column;gap:10px;background:#f8fafc}
+    .message{max-width:80%;padding:10px 14px;border-radius:16px;font-size:14px;line-height:1.5;word-wrap:break-word;animation:fadeIn 0.2s ease}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    .message.user{align-self:flex-end;background:linear-gradient(135deg,#f59e0b,#d97706);color:#ffffff;border-bottom-right-radius:4px}
+    .message.bot{align-self:flex-start;background:#ffffff;color:#1e293b;border-bottom-left-radius:4px;box-shadow:0 1px 3px rgba(0,0,0,0.08)}
+    .message.bot a{color:#f59e0b}
+    .message.bot strong{color:#0f172a}
+    .chat-input-area{padding:12px 16px;border-top:1px solid #e2e8f0;display:flex;gap:10px;background:#ffffff}
+    .chat-input{flex:1;padding:12px 16px;border:1px solid #e2e8f0;border-radius:24px;font-size:14px;outline:none;resize:none;min-height:44px;max-height:100px;font-family:inherit;line-height:1.4;transition:border-color 0.2s}
+    .chat-input:focus{border-color:#f59e0b}
+    .chat-send{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#f59e0b,#d97706);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s}
+    .chat-send:hover{transform:scale(1.05);box-shadow:0 4px 15px rgba(245,158,11,0.4)}
     .chat-send svg{width:18px;height:18px;fill:white}
-    .typing-indicator{display:none;align-self:flex-start;background:var(--bot-bubble);padding:12px 16px;border-radius:16px;border-bottom-left-radius:4px;margin-top:4px}
+    .typing-indicator{display:none;align-self:flex-start;background:#ffffff;padding:12px 16px;border-radius:16px;border-bottom-left-radius:4px;margin-top:4px;box-shadow:0 1px 3px rgba(0,0,0,0.08)}
     .typing-indicator.visible{display:flex;align-items:center;gap:4px}
-    .typing-indicator span{width:8px;height:8px;background:var(--text-light);border-radius:50%;animation:bounce 1.4s infinite ease-in-out both}
+    .typing-indicator span{width:8px;height:8px;background:#94a3b8;border-radius:50%;animation:bounce 1.4s infinite ease-in-out both}
     .typing-indicator span:nth-child(1){animation-delay:-0.32s}
     .typing-indicator span:nth-child(2){animation-delay:-0.16s}
+    .typing-indicator span:nth-child(3){animation-delay:0s}
     @keyframes bounce{0%,80%,100%{transform:scale(0.6);opacity:0.4}40%{transform:scale(1);opacity:1}}
-    .welcome-message{text-align:center;padding:20px;color:var(--text-light)}
-    .welcome-message h3{color:var(--text);margin-bottom:8px;font-size:16px}
-    @media(max-width:520px){.chat-panel{bottom:0;right:0;left:0;width:100%;height:100%;border-radius:0}.chat-toggle{bottom:16px;right:16px}}
+    .welcome-message{text-align:center;padding:30px 20px}
+    .welcome-message h3{color:#0f172a;margin-bottom:8px;font-size:18px;font-weight:600}
+    .welcome-message p{color:#64748b;font-size:14px}
+    .error-message{background:#fef2f2;color:#dc2626;padding:10px 14px;border-radius:12px;font-size:13px;text-align:center;margin:8px 0}
+    @media(max-width:480px){.chat-panel{bottom:0;right:0;left:0;width:100%;height:100%;border-radius:0}.chat-toggle{bottom:16px;right:16px}}
   </style>
 
   <script>
