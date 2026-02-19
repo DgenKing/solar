@@ -1,0 +1,38 @@
+[
+  {
+    "id": "policy-001",
+    "topic": "warranty",
+    "title": "Solar Panel Warranty",
+    "content": "WARRANTY COVERAGE\n\nAll our solar panel installations come with comprehensive warranty coverage:\n\nPANELS: 25-year product and performance warranty\n- Guaranteed 80% output at 25 years\n- Covers manufacturing defects\n- Covers degradation above normal levels\n\nINVERTERS: 10-year warranty (extendable to 25 years)\n- Covers mechanical and electrical faults\n- Replacement or repair at our discretion\n\nBATTERY SYSTEMS: 10-year warranty\n- Tesla Powerwall: 10 years unlimited cycles\n- GivEnergy: 10 years / 6,000 cycles\n- FoxESS: 10 years\n\nWORKMANSHIP: 5-year warranty\n- Covers installation-related issues\n- Roof penetrations and sealing\n- Electrical connections\n\nTo make a warranty claim, email warranty@solarbright.co.uk with your installation date and system details."
+  },
+  {
+    "id": "policy-002",
+    "topic": "installation",
+    "title": "Installation Process",
+    "content": "INSTALLATION PROCESS\n\n1. FREE SURVEY (1-2 hours)\nOur surveyor visits your property to assess roof condition, orientation, and shading. We check structural integrity and discuss your energy needs.\n\n2. SYSTEM DESIGN (2-3 days)\nOur engineers design a custom system based on survey findings. You'll receive a detailed proposal with panel placement and expected output.\n\n3. PLANNING & PERMISSIONS (1-2 weeks)\nWe handle all paperwork including:\n- Planning permission (if required)\n- Building regulations notification\n- DNO (Distribution Network Operator) application\n- Grid connection application\n\n4. INSTALLATION (1-2 days)\nMCS-certified engineers install your system:\n- Day 1: Panel and inverter installation\n- Day 2: Electrical connections and testing\n- Battery installation (if applicable) on separate half-day\n\n5. COMMISSIONING & HANDOVER (2-3 hours)\nWe test the system, connect it to the internet for monitoring, and walk you through operation. You receive all documentation and warranties.\n\n6. GRID CONNECTION (2-4 weeks)\nYour energy supplier installs a bi-directional meter. Once connected, you can start generating and exporting."
+  },
+  {
+    "id": "policy-003",
+    "topic": "returns",
+    "title": "Returns & Cancellations",
+    "content": "RETURNS & CANCELLATIONS\n\nCOOLING OFF PERIOD\nYou have 14 days from signing your installation contract to cancel without penalty. Simply email cancellation@solarbright.co.uk or call 0800 123 4567.\n\nAFTER INSTALLATION\nDue to the custom nature of solar installations, we cannot offer refunds once installation is complete. However, we will work to resolve any issues under our warranty terms.\n\nFAULTY EQUIPMENT\nIf any equipment is found to be faulty within the warranty period, we will repair or replace at no cost. This does not affect your statutory rights.\n\nDISSATISFACTION\nIf you're unhappy with any aspect of our service, please contact us directly. We're committed to resolving any concerns and maintaining our 98% customer satisfaction rating."
+  },
+  {
+    "id": "policy-004",
+    "topic": "payment",
+    "title": "Payment Terms",
+    "content": "PAYMENT OPTIONS\n\nWe offer flexible payment solutions to make solar accessible:\n\nFULL PAYMENT\nPay the full amount upfront. 2% discount applies.\n\nFINANCE OPTIONS\n- 0% APR over 3-5 years (subject to status)\n- £0 deposit available\n- Monthly payments from £60/month\n\nPAYMENT SCHEDULE\n- 25% deposit to secure booking\n- 50% on installation day\n- 25% on grid connection\n\nWe accept:\n- Bank transfer\n- Credit/debit cards\n- Finance through our partner providers\n\nAll prices include VAT at 0% for residential installations (reduced rate)."
+  },
+  {
+    "id": "policy-005",
+    "topic": "maintenance",
+    "title": "Maintenance & Servicing",
+    "content": "MAINTENANCE & SERVICING\n\nANNUAL SERVICING (OPTIONAL - £99/year)\nOur annual service includes:\n- Visual inspection of all panels\n- Electrical system testing\n- Inverter performance check\n- Monitoring system verification\n- Cleaning (if needed)\n- Service report\n\nWARRANTY-BACKED MAINTENANCE\nRegular servicing is required to maintain warranty validity. We'll remind you when service is due.\n\nPANEL CLEANING\nPanels typically self-clean in rain, but annual cleaning is recommended for optimal performance. We offer cleaning from £49.\n\nMONITORING\nAll systems include free monitoring via app. You'll receive alerts if system performance drops.\n\nEMERGENCY SUPPORT\n24/7 emergency helpline for system faults. Response within 24 hours for non-emergencies."
+  },
+  {
+    "id": "policy-006",
+    "topic": "grants",
+    "title": "Government Grants & Incentives",
+    "content": "GRANTS & INCENTIVES\n\nSMART EXPORT GUARANTEE (SEG)\nThe SEG requires energy suppliers to offer payment for excess solar energy exported to the grid. Rates vary by supplier but typically 3-10p/kWh. We can help you switch to the best SEG provider.\n\nECO4 SCHEME\nThe Energy Company Obligation (ECO4) provides grants for energy efficiency improvements. Eligibility based on:\n- Income and benefits\n- EPC rating of your property\n- Existing heating system\n\nSolarBright is an approved ECO4 installer. We can check your eligibility at no obligation.\n\nBOILER UPGRADE SCHEME\nWhile primarily for heat pumps, this government scheme can sometimes support solar with heat pump combinations.\n\nGRANT SCAM WARNING\nWe will NEVER charge upfront for grant applications or guarantee grant approval. Beware of cold callers offering 'free solar' - if it sounds too good to be true, it probably is."
+  }
+]

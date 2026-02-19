@@ -1,0 +1,16 @@
+{
+  "businessHours": "Monday - Friday: 8am - 6pm, Saturday: 9am - 4pm",
+  "email": "hello@solarbright.co.uk",
+  "phone": "0800 123 4567",
+  "escalationTriggers": [
+    "Customer explicitly asks to speak to a person",
+    "Customer is frustrated or angry",
+    "Request involves complex technical issues",
+    "Issue involves billing disputes",
+    "Complaint about service or staff",
+    "Cannot resolve after 5+ exchanges",
+    "Request for immediate installation",
+    "Request for commercial solar quote over £20,000"
+  ],
+  "handoffMessage": "I've escalated your enquiry to our solar experts. A member of our team will contact you within 24 hours."
+}

@@ -1,0 +1,14 @@
+{
+  "name": "chatbot",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --watch server.ts",
+    "start": "bun run server.ts",
+    "build": "bun build server.ts --outdir=dist"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}

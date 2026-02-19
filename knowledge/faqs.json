@@ -1,0 +1,74 @@
+[
+  {
+    "id": "faq-001",
+    "question": "How much do solar panels cost?",
+    "answer": "Residential solar panel systems typically range from £5,000 to £15,000 depending on system size. A 3kW system starts at around £5,500, a 4kW system is approximately £7,000, and a 6kW system is around £9,500. All prices include VAT and standard installation.",
+    "keywords": ["cost", "price", "price", "expensive", "how much", "pricing", "quote"]
+  },
+  {
+    "id": "faq-002",
+    "question": "How much can I save with solar panels?",
+    "answer": "Most homeowners save between £300-£600 per year on their electricity bills, depending on system size and energy usage. With a battery, savings can increase to £800-£1,000+ annually. Over 25 years, total savings can exceed £15,000-£25,000.",
+    "keywords": ["saving", "savings", "bill", "reduce", "cost", "roi", "return"]
+  },
+  {
+    "id": "faq-003",
+    "question": "How long does installation take?",
+    "answer": "Most residential solar installations take just 1-2 days to complete. Battery installations add another half day. We handle everything including the grid connection application, which typically takes 2-4 weeks for your energy supplier to process.",
+    "keywords": ["install", "installation", "time", "days", "how long", "duration"]
+  },
+  {
+    "id": "faq-004",
+    "question": "Do I need planning permission?",
+    "answer": "In most cases, solar panels don't require planning permission as they're considered 'permitted development'. However, if you live in a listed building or a conservation area, you may need approval. We can advise on this during your free survey.",
+    "keywords": ["planning", "permission", "permitted", "listed", "conservation", "approval"]
+  },
+  {
+    "id": "faq-005",
+    "question": "What about government grants or incentives?",
+    "answer": "The Feed-in Tariff has ended, but you can still earn money through the Smart Export Guarantee (SEG) by selling excess energy back to your supplier. For eligible households, the ECO4 scheme provides grants for energy efficiency improvements including solar. We can check your eligibility.",
+    "keywords": ["grant", "government", "eco4", "fit", "seg", "export", "incentive", "subsidy"]
+  },
+  {
+    "id": "faq-006",
+    "question": "What happens on cloudy days?",
+    "answer": "Solar panels still generate electricity on cloudy days, though at reduced efficiency (typically 10-25% of maximum output). UK panels are specifically designed for our climate. Your system will still generate significant energy year-round, and a battery helps store any excess for later use.",
+    "keywords": ["cloudy", "weather", "rain", "winter", "efficiency", "output", "generation"]
+  },
+  {
+    "id": "faq-007",
+    "question": "How long do solar panels last?",
+    "answer": "Quality solar panels have a lifespan of 25-30 years. We offer 25-year warranties that guarantee at least 80% of the panel's original output. Panels degrade very slowly - typically only 0.5-1% per year. Inverters usually need replacing after 10-15 years.",
+    "keywords": ["lifetime", "warranty", "years", "degrade", "last", "panels", " lifespan"]
+  },
+  {
+    "id": "faq-008",
+    "question": "Do I need a battery?",
+    "answer": "A battery isn't required but is highly recommended. Without a battery, excess solar energy is exported to the grid. With a battery, you store that energy for use in the evening and night, maximising your savings. Batteries also provide backup power during outages.",
+    "keywords": ["battery", "storage", "powerwall", "tesla", "backup", "optional"]
+  },
+  {
+    "id": "faq-009",
+    "question": "Is my roof suitable?",
+    "answer": "South-facing roofs with minimal shading are ideal, but east and west-facing roofs also work well. We assess your roof during the free survey. Factors we check: roof angle, available space, roof condition, and shading from trees or buildings.",
+    "keywords": ["roof", "suitable", "facing", "shade", "shading", "orientation", "survey"]
+  },
+  {
+    "id": "faq-010",
+    "question": "How do I maintain solar panels?",
+    "answer": "Solar panels require minimal maintenance. They'll generally clean themselves in the rain, but occasional cleaning (a few times per year) helps maximise efficiency. We include a free first-year service. Annual inspections are recommended to ensure everything is working optimally.",
+    "keywords": ["maintain", "maintenance", "clean", "service", "upkeep", "inspect"]
+  },
+  {
+    "id": "faq-011",
+    "question": "Can I get an EV charger with solar?",
+    "answer": "Absolutely! We offer integrated EV charging solutions that can be powered directly by your solar panels. Smart chargers can automatically charge your car when excess solar energy is available, or when electricity rates are lowest.",
+    "keywords": ["ev", "electric", "car", "vehicle", "charger", "charging", "tesla", "leaf"]
+  },
+  {
+    "id": "faq-012",
+    "question": "What is MCS certification?",
+    "answer": "MCS (Microgeneration Certification Scheme) is the industry standard for solar installations in the UK. MCS-certified installers must meet strict standards. Only MCS-certified installations qualify for the Smart Export Guarantee and some government schemes.",
+    "keywords": ["mcs", "certified", "certification", "standard", "quality"]
+  }
+]

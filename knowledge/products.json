@@ -1,0 +1,161 @@
+[
+  {
+    "id": "solar-001",
+    "name": "3kW Residential Solar Panel System",
+    "category": "Residential Solar",
+    "description": "Perfect for small to medium homes. 8-10 high-efficiency monocrystalline panels generating approx. 3,000kWh/year.",
+    "price": 5499,
+    "inStock": true,
+    "specs": {
+      "System Size": "3kW",
+      "Panels": "8 x 375W Monocrystalline",
+      "Annual Generation": "~3,000 kWh",
+      "Roof Space Required": "18-22 m²",
+      "Inverter": "3kW String Inverter",
+      "Warranty": "25 years panel, 10 years inverter"
+    }
+  },
+  {
+    "id": "solar-002",
+    "name": "4kW Residential Solar Panel System",
+    "category": "Residential Solar",
+    "description": "Ideal for medium-sized homes. 10-12 panels generating approx. 4,000kWh/year. Our most popular choice.",
+    "price": 6999,
+    "inStock": true,
+    "specs": {
+      "System Size": "4kW",
+      "Panels": "10 x 400W Monocrystalline",
+      "Annual Generation": "~4,000 kWh",
+      "Roof Space Required": "24-28 m²",
+      "Inverter": "4kW String Inverter",
+      "Warranty": "25 years panel, 10 years inverter"
+    }
+  },
+  {
+    "id": "solar-003",
+    "name": "6kW Residential Solar Panel System",
+    "category": "Residential Solar",
+    "description": "Best for larger homes or those with high energy usage. 15 panels generating approx. 6,000kWh/year.",
+    "price": 9499,
+    "inStock": true,
+    "specs": {
+      "System Size": "6kW",
+      "Panels": "15 x 400W Monocrystalline",
+      "Annual Generation": "~6,000 kWh",
+      "Roof Space Required": "35-40 m²",
+      "Inverter": "6kW String Inverter",
+      "Warranty": "25 years panel, 10 years inverter"
+    }
+  },
+  {
+    "id": "solar-004",
+    "name": "10kW Commercial Solar System",
+    "category": "Commercial Solar",
+    "description": "Large system for businesses, farms, or large properties. Significant energy savings and ROI.",
+    "price": 14999,
+    "inStock": true,
+    "specs": {
+      "System Size": "10kW",
+      "Panels": "25 x 400W Monocrystalline",
+      "Annual Generation": "~10,000 kWh",
+      "Roof Space Required": "60-70 m²",
+      "Inverter": "10kW Commercial Inverter",
+      "Warranty": "25 years panel, 10 years inverter"
+    }
+  },
+  {
+    "id": "battery-001",
+    "name": "Tesla Powerwall 2",
+    "category": "Battery Storage",
+    "description": "Industry-leading home battery. 13.5kWh capacity stores excess solar for use at night or during outages.",
+    "price": 7500,
+    "inStock": true,
+    "specs": {
+      "Capacity": "13.5 kWh",
+      "Usable Capacity": "13.5 kWh",
+      "Power": "5kW continuous, 7kW peak",
+      "Efficiency": "90% round-trip",
+      "Installation": "Wall-mounted indoor/outdoor",
+      "Warranty": "10 years unlimited cycles"
+    }
+  },
+  {
+    "id": "battery-002",
+    "name": "GivEnergy Battery 9.5kWh",
+    "category": "Battery Storage",
+    "description": "British-made battery with excellent value. Pairs perfectly with GivEnergy inverters.",
+    "price": 4999,
+    "inStock": true,
+    "specs": {
+      "Capacity": "9.5 kWh",
+      "Usable Capacity": "9.5 kWh",
+      "Power": "3.6kW continuous",
+      "Efficiency": "95% round-trip",
+      "Installation": "Wall-mounted",
+      "Warranty": "10 years / 6,000 cycles"
+    }
+  },
+  {
+    "id": "battery-003",
+    "name": "FoxESS Battery 5.2kWh",
+    "category": "Battery Storage",
+    "description": "Modular battery solution. Stack up to 4 units for flexible capacity up to 20kWh.",
+    "price": 3299,
+    "inStock": true,
+    "specs": {
+      "Capacity": "5.2 kWh per unit",
+      "Usable Capacity": "4.68 kWh",
+      "Power": "2.5kW continuous",
+      "Efficiency": "95% round-trip",
+      "Installation": "Wall-mounted",
+      "Warranty": "10 years"
+    }
+  },
+  {
+    "id": "inverter-001",
+    "name": "SolarEdge Setapp Inverter",
+    "category": "Inverters",
+    "description": "Premium inverter with built-in optimisation. Includes 25-year panel-level monitoring.",
+    "price": 1899,
+    "inStock": true,
+    "specs": {
+      "Size": "5kW",
+      "Efficiency": "98%",
+      "Monitoring": "Panel-level via Setapp",
+      "Smart Features": "Export limiting, time-of-use",
+      "Warranty": "12 years (extendable to 25)"
+    }
+  },
+  {
+    "id": "ev-001",
+    "name": "Wallbox Pulsar Plus 7kW",
+    "category": "EV Chargers",
+    "description": "Smart home EV charger with solar integration. Control via app, schedule charging for cheap rates.",
+    "price": 649,
+    "inStock": true,
+    "specs": {
+      "Power": "7kW (32A)",
+      "Cable": "5m Type 2",
+      "Connectivity": "WiFi, Bluetooth",
+      "Smart Features": "Solar smoothing, scheduling",
+      "Installation": "Wall-mounted",
+      "Warranty": "3 years"
+    }
+  },
+  {
+    "id": "ev-002",
+    "name": "Ohme Home Pro",
+    "category": "EV Chargers",
+    "description": "Intelligent EV charger that automatically adjusts charging based on energy prices and solar generation.",
+    "price": 749,
+    "inStock": true,
+    "specs": {
+      "Power": "7kW (32A)",
+      "Cable": "5m Type 2",
+      "Connectivity": "4G built-in",
+      "Smart Features": "Dynamic pricing, Octopus integration",
+      "Installation": "Wall-mounted",
+      "Warranty": "3 years"
+    }
+  }
+]

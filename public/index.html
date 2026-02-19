@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SolarBright - Solar Panel Installation UK</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --primary: #f59e0b;
+      --primary-dark: #d97706;
+      --secondary: #1e3a5f;
+      --text: #1f2937;
+      --text-light: #6b7280;
+      --bg: #ffffff;
+      --bg-secondary: #f9fafb;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    /* Header */
+    header {
+      background: var(--bg);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--secondary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo svg {
+      width: 32px;
+      height: 32px;
+      fill: var(--primary);
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .cta-button {
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .cta-button:hover {
+      background: var(--primary-dark);
+      color: white;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--secondary) 0%, #2d4a6f 100%);
+      color: white;
+      padding: 8rem 2rem 6rem;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .hero .cta-button {
+      background: var(--primary);
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+    }
+
+    .hero .secondary-button {
+      background: transparent;
+      border: 2px solid white;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .hero .secondary-button:hover {
+      background: rgba(255,255,255,0.1);
+      color: white;
+    }
+
+    /* Stats */
+    .stats {
+      background: var(--bg-secondary);
+      padding: 4rem 2rem;
+    }
+
+    .stats-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .stat-item h3 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-item p {
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    /* Services */
+    .services {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
+
+    .section-title p {
+      color: var(--text-light);
+      font-size: 1.1rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: var(--bg);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      background: #fef3c7;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-icon svg {
+      width: 32px;
+      height: 32px;
+      fill: var(--primary);
+    }
+
+    .service-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: var(--secondary);
+    }
+
+    .service-card p {
+      color: var(--text-light);
+    }
+
+    /* How it works */
+    .how-it-works {
+      background: var(--bg-secondary);
+      padding: 6rem 2rem;
+    }
+
+    .how-it-works .section-title {
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+    }
+
+    .steps-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .step {
+      text-align: center;
+      position: relative;
+    }
+
+    .step-number {
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0 auto 1rem;
+    }
+
+    .step h3 {
+      margin-bottom: 0.5rem;
+      color: var(--secondary);
+    }
+
+    .step p {
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    /* Benefits */
+    .benefits {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .benefits-content h2 {
+      font-size: 2rem;
+      color: var(--secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .benefit-list {
+      list-style: none;
+    }
+
+    .benefit-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .benefit-list svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--primary);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .benefits-image {
+      background: linear-gradient(135deg, var(--secondary) 0%, #2d4a6f 100%);
+      border-radius: 16px;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .benefits-image svg {
+      width: 200px;
+      height: 200px;
+      fill: var(--primary);
+      opacity: 0.8;
+    }
+
+    /* CTA */
+    .cta-section {
+      background: var(--primary);
+      padding: 4rem 2rem;
+      text-align: center;
+      color: white;
+    }
+
+    .cta-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      opacity: 0.9;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .cta-section .cta-button {
+      background: var(--secondary);
+    }
+
+    .cta-section .cta-button:hover {
+      background: #152a45;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--secondary);
+      color: white;
+      padding: 4rem 2rem 2rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .footer-brand h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-brand p {
+      opacity: 0.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-column h4 {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .footer-column a {
+      display: block;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+      transition: color 0.2s;
+    }
+
+    .footer-column a:hover {
+      color: var(--primary);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 3rem auto 0;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        SolarBright
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#contact">Contact</a>
+        <a href="#" class="cta-button" onclick="openChat()">Get Free Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Power Your Home with Solar Energy</h1>
+    <p>Reduce your energy bills, earn money through exports, and help the environment with our professional solar panel installation.</p>
+    <div class="hero-buttons">
+      <a href="#" class="cta-button" onclick="openChat()">Chat with Us</a>
+      <a href="#how-it-works" class="secondary-button">Learn More</a>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h3>2,500+</h3>
+        <p>Installations Completed</p>
+      </div>
+      <div class="stat-item">
+        <h3>£600</h3>
+        <p>Average Annual Savings</p>
+      </div>
+      <div class="stat-item">
+        <h3>25 Years</h3>
+        <p>Panel Warranty</p>
+      </div>
+      <div class="stat-item">
+        <h3>98%</h3>
+        <p>Customer Satisfaction</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>Comprehensive solar solutions for homes and businesses</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 3L4 9v12h16V9l-8-6zm0 2.5L18 10v9H6v-9l6-4.5z"/>
+            <path d="M11 13h2v5h-2z"/>
+          </svg>
+        </div>
+        <h3>Residential Solar</h3>
+        <p>Custom solar panel systems for your home. We handle everything from design to installation and grid connection.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4zm8 16H6v-9h12v9z"/>
+          </svg>
+        </div>
+        <h3>Battery Storage</h3>
+        <p>Store excess solar energy with battery systems. Maximise your usage and get backup power during outages.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/>
+            <path d="M7 12h2v5H7zm4-3h2v8h-2zm4-3h2v11h-2z"/>
+          </svg>
+        </div>
+        <h3>Commercial Solar</h3>
+        <p>Large-scale solar installations for businesses. Reduce overheads and demonstrate environmental commitment.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works" id="how-it-works">
+    <div class="section-title">
+      <h2>How It Works</h2>
+      <p>Getting solar is easier than you think</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Free Survey</h3>
+        <p>We assess your roof and energy needs with a free, no-obligation survey.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Custom Design</h3>
+        <p>We design a system tailored to your home and energy requirements.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Professional Install</h3>
+        <p>MCS-certified engineers install your system in just 1-2 days.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Start Saving</h3>
+        <p>Connect to the grid and start saving on your energy bills immediately.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits" id="benefits">
+    <div class="benefits-grid">
+      <div class="benefits-content">
+        <h2>Why Choose SolarBright?</h2>
+        <ul class="benefit-list">
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            <div><strong>MCS Certified</strong> - All our installers are MCS certified for quality assurance</div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            <div><strong>25-Year Warranty</strong> - All panels come with a 25-year performance guarantee</div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            <div><strong>Government Grants</strong> - We help you access ECO4 and other available grants</div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            <div><strong>No Upfront Cost</strong> - Flexible financing options available from £0 deposit</div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            <div><strong>Free Maintenance</strong> - First year maintenance included with every installation</div>
+          </li>
+        </ul>
+      </div>
+      <div class="benefits-image">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 3L4 9v12h16V9l-8-6zm0 2.5L18 10v9H6v-9l6-4.5z"/>
+          <circle cx="12" cy="14" r="3"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Ready to Start Saving?</h2>
+    <p>Chat with our solar experts today for a free, no-obligation quote</p>
+    <a href="#" class="cta-button" onclick="openChat()">Start Live Chat</a>
+  </section>
+
+  <footer id="contact">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 3L4 9v12h16V9l-8-6z"/>
+          </svg>
+          SolarBright
+        </h3>
+        <p>Your trusted partner for solar energy in the UK. Professional installations since 2015.</p>
+      </div>
+      <div class="footer-column">
+        <h4>Services</h4>
+        <a href="#">Residential Solar</a>
+        <a href="#">Commercial Solar</a>
+        <a href="#">Battery Storage</a>
+        <a href="#">EV Chargers</a>
+      </div>
+      <div class="footer-column">
+        <h4>Company</h4>
+        <a href="#">About Us</a>
+        <a href="#">Our Team</a>
+        <a href="#">Careers</a>
+        <a href="#">Blog</a>
+      </div>
+      <div class="footer-column">
+        <h4>Contact</h4>
+        <a href="tel:08001234567">0800 123 4567</a>
+        <a href="mailto:hello@solarbright.co.uk">hello@solarbright.co.uk</a>
+        <a href="#">Request Quote</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 SolarBright Ltd. All rights reserved. MCS Certified Installer.
+    </div>
+  </footer>
+
+  <script>
+    function openChat() {
+      const chatPanel = document.getElementById('chatPanel');
+      const chatToggle = document.getElementById('chatToggle');
+      if (chatPanel && chatToggle) {
+        chatPanel.classList.add('open');
+        chatToggle.classList.add('hidden');
+      }
+      if (event) event.preventDefault();
+    }
+  </script>
+
+  <!-- Chat Widget -->
+  <button class="chat-toggle" id="chatToggle" aria-label="Open chat" onclick="openChat()">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/><path d="M7 9h10v2H7zm0-3h10v2H7z"/></svg>
+  </button>
+
+  <div class="chat-panel" id="chatPanel">
+    <div class="chat-header">
+      <div class="chat-header-avatar"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg></div>
+      <div class="chat-header-info">
+        <div class="chat-header-title">Solar Advisor</div>
+        <div class="chat-header-status">Online</div>
+      </div>
+      <button class="chat-close" onclick="document.getElementById('chatPanel').classList.remove('open');document.getElementById('chatToggle').classList.remove('hidden');" aria-label="Close chat">
+        <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="welcome-message"><h3>Hi! I'm your Solar Advisor</h3><p>I can help with solar panels, batteries, savings, and more</p></div>
+    </div>
+    <div class="typing-indicator" id="typingIndicator"><span></span><span></span><span></span></div>
+    <div class="chat-input-area">
+      <textarea class="chat-input" id="chatInput" placeholder="Ask about solar panels..." rows="1"></textarea>
+      <button class="chat-send" id="chatSend" onclick="sendMessage()" aria-label="Send message">
+        <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <style>
+    .chat-toggle{position:fixed;bottom:20px;right:20px;width:60px;height:60px;border-radius:50%;background:var(--primary);border:none;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.15);display:flex;align-items:center;justify-content:center;z-index:1000;transition:transform 0.2s}
+    .chat-toggle:hover{transform:scale(1.05)}
+    .chat-toggle.hidden{display:none}
+    .chat-toggle svg{width:28px;height:28px;fill:white}
+    .chat-panel{position:fixed;bottom:90px;right:20px;width:450px;height:600px;background:var(--bg);border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.12);display:flex;flex-direction:column;z-index:1000;opacity:0;transform:translateY(20px) scale(0.95);pointer-events:none;transition:opacity 0.2s,transform 0.2s}
+    .chat-panel.open{opacity:1;transform:translateY(0) scale(1);pointer-events:all}
+    .chat-header{padding:16px;background:var(--primary);color:white;border-radius:12px 12px 0 0;display:flex;align-items:center;gap:12px}
+    .chat-header-avatar{width:36px;height:36px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center}
+    .chat-header-avatar svg{width:20px;height:20px;fill:white}
+    .chat-header-info{flex:1}
+    .chat-header-title{font-weight:600;font-size:15px}
+    .chat-header-status{font-size:12px;opacity:0.85}
+    .chat-close{background:none;border:none;cursor:pointer;padding:4px}
+    .chat-close svg{width:20px;height:20px;fill:white;opacity:0.8}
+    .chat-messages{flex:1;overflow-y:auto;overflow-x:hidden;padding:16px;padding-bottom:20px;display:flex;flex-direction:column;gap:12px}
+    .message{max-width:85%;padding:10px 14px;border-radius:16px;font-size:14px;line-height:1.5;word-wrap:break-word}
+    .message.user{align-self:flex-end;background:var(--user-bubble);color:var(--user-text);border-bottom-right-radius:4px}
+    .message.bot{align-self:flex-start;background:var(--bot-bubble);color:var(--bot-text);border-bottom-left-radius:4px}
+    .chat-input-area{padding:12px 16px;border-top:1px solid var(--border);display:flex;gap:8px}
+    .chat-input{flex:1;padding:10px 14px;border:1px solid var(--border);border-radius:20px;font-size:14px;outline:none;resize:vertical;min-height:40px;max-height:120px;font-family:inherit;overflow-y:auto;line-height:1.4}
+    .chat-input:focus{border-color:var(--primary)}
+    .chat-send{width:40px;height:40px;border-radius:50%;background:var(--primary);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .chat-send:hover{background:var(--primary-hover)}
+    .chat-send svg{width:18px;height:18px;fill:white}
+    .typing-indicator{display:none;align-self:flex-start;background:var(--bot-bubble);padding:12px 16px;border-radius:16px;border-bottom-left-radius:4px;margin-top:4px}
+    .typing-indicator.visible{display:flex;align-items:center;gap:4px}
+    .typing-indicator span{width:8px;height:8px;background:var(--text-light);border-radius:50%;animation:bounce 1.4s infinite ease-in-out both}
+    .typing-indicator span:nth-child(1){animation-delay:-0.32s}
+    .typing-indicator span:nth-child(2){animation-delay:-0.16s}
+    @keyframes bounce{0%,80%,100%{transform:scale(0.6);opacity:0.4}40%{transform:scale(1);opacity:1}}
+    .welcome-message{text-align:center;padding:20px;color:var(--text-light)}
+    .welcome-message h3{color:var(--text);margin-bottom:8px;font-size:16px}
+    @media(max-width:520px){.chat-panel{bottom:0;right:0;left:0;width:100%;height:100%;border-radius:0}.chat-toggle{bottom:16px;right:16px}}
+  </style>
+
+  <script>
+    let sessionId=localStorage.getItem('chatbot_session')||('sess_'+Math.random().toString(36).substr(2,9));localStorage.setItem('chatbot_session',sessionId);
+    function $(id){return document.getElementById(id)}
+    function escapeHtml(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;')}
+    function parseMarkdown(t){let h=escapeHtml(t);h=h.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');h=h.replace(/\[(.+?)\]\((.+?)\)/g,'<a href="$2" target="_blank">$1</a>');h=h.replace(/\n\n/g,'</p><p>');h=h.replace(/\n/g,'<br>');return'<p>'+h+'</p>'}
+    function scrollToBottom(){const msgs=$('chatMessages');if(msgs)msgs.scrollTo({top:msgs.scrollHeight,behavior:'smooth'})}
+    function addMessage(content,isUser){const m=document.createElement('div');m.className='message '+(isUser?'user':'bot');m.innerHTML=parseMarkdown(content);$('chatMessages').appendChild(m);scrollToBottom()}
+    function typeMessage(content){return new Promise((resolve)=>{const m=document.createElement('div');m.className='message bot';$('chatMessages').appendChild(m);const t=document.createElement('div');t.innerHTML=parseMarkdown(content);const text=t.textContent||'';let i=0;const speed=15;function type(){if(i<text.length){m.innerHTML=parseMarkdown(text.substring(0,i+1));scrollToBottom();i++;setTimeout(type,speed+Math.random()*10)}else{m.innerHTML=parseMarkdown(content);resolve()}}type()})}
+    async function streamResponse(message){const cs=$('chatSend'),ci=$('chatInput'),msgs=$('chatMessages'),ti=$('typingIndicator');if(cs)cs.disabled=true;if(ci)ci.disabled=true;if(ti){ti.classList.add('visible');msgs.appendChild(ti);scrollToBottom()}try{const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId,message})});const d=await r.json();if(ti){ti.classList.remove('visible');ti.remove()}if(d.error){const e=document.createElement('div');e.className='error-message';e.textContent=d.error;msgs.appendChild(e);scrollToBottom()}else{await typeMessage(d.content)}}catch(e){if(ti){ti.classList.remove('visible');ti.remove()}const er=document.createElement('div');er.className='error-message';er.textContent='Connection error. Try again.';msgs.appendChild(er);scrollToBottom()}if(cs)cs.disabled=false;if(ci){ci.disabled=false;ci.value='';ci.style.height='auto';ci.focus()}}
+    function sendMessage(){const ci=$('chatInput');if(!ci)return;const m=ci.value.trim();if(!m)return;ci.value='';ci.style.height='auto';addMessage(m,true);streamResponse(m)}
+    const inputEl=$('chatInput');if(inputEl){inputEl.addEventListener('keypress',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMessage()}});inputEl.addEventListener('input',function(){this.style.height='auto';this.style.height=Math.min(this.scrollHeight,120)+'px'})}
+    // Auto-open chat after 10 seconds
+    setTimeout(function(){const cp=$('chatPanel'),ct=$('chatToggle');if(cp&&ct){cp.classList.add('open');ct.classList.add('hidden')}},10000);
+  </script>
+</body>
+</html>
