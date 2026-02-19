@@ -5,10 +5,11 @@
   "scripts": {
     "dev": "bun run --watch server.ts",
     "start": "bun run server.ts",
-    "build": "bun build server.ts --outdir=dist"
+    "build": "tsc"
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "typescript": "^5.0.0"
   }
 }
