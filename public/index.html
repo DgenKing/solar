@@ -140,6 +140,11 @@
       width: 100%;
     }
 
+    /* Hide mobile menu on desktop */
+    .mobile-menu {
+      display: none;
+    }
+
     .cta-button {
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
       color: white;
@@ -181,7 +186,9 @@
 
     /* Hero */
     .hero {
-      background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 50%, #334155 100%);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.85) 50%, rgba(51, 65, 85, 0.9) 100%), url('/images/header-hero.jpg');
+      background-size: cover;
+      background-position: center;
       color: white;
       padding: 10rem 2rem 7rem;
       text-align: center;
@@ -497,6 +504,80 @@
       line-height: 1.6;
     }
 
+    /* Solar Explained */
+    .solar-explained {
+      padding: 7rem 2rem;
+      background: var(--bg-secondary);
+    }
+
+    .solar-explained-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .solar-explained-image img {
+      width: 100%;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .solar-explained-content h2 {
+      font-size: 2.25rem;
+      color: var(--secondary);
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    .solar-explained-content > p {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .solar-steps-list {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .solar-steps-list li {
+      padding: 1rem;
+      background: white;
+      border-radius: var(--radius-md);
+      margin-bottom: 0.75rem;
+      box-shadow: var(--shadow-sm);
+      border-left: 3px solid var(--primary);
+    }
+
+    .solar-steps-list strong {
+      color: var(--secondary);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .solar-steps-list span {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    .solar-note {
+      padding: 1rem;
+      background: rgba(245, 158, 11, 0.1);
+      border-radius: var(--radius-md);
+      color: var(--secondary);
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .solar-explained-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* Benefits */
     .benefits {
       padding: 7rem 2rem;
@@ -559,7 +640,6 @@
     }
 
     .benefits-image {
-      background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
       border-radius: var(--radius-xl);
       height: 500px;
       display: flex;
@@ -569,12 +649,19 @@
       overflow: hidden;
     }
 
+    .benefits-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     .benefits-image::before {
       content: '';
       position: absolute;
       width: 300px;
       height: 300px;
       background: radial-gradient(circle, rgba(245, 158, 11, 0.2) 0%, transparent 70%);
+      z-index: 1;
     }
 
     .benefits-image svg {
@@ -994,6 +1081,25 @@
     </div>
   </section>
 
+  <section class="solar-explained">
+    <div class="solar-explained-grid">
+      <div class="solar-explained-image">
+        <img src="/images/how-solar-power-works.webp" alt="How solar power works diagram" />
+      </div>
+      <div class="solar-explained-content">
+        <h2>How Solar Energy Works</h2>
+        <p>Solar panels convert sunlight into electricity using photovoltaic (PV) cells. Here's the process:</p>
+        <ul class="solar-steps-list">
+          <li><strong>Sunlight hits the panels</strong> - Photons from sunlight knock electrons loose from silicon atoms</li>
+          <li><strong>Electricity is generated</strong> - The moving electrons create direct current (DC) electricity</li>
+          <li><strong>Inverter converts power</strong> - An inverter converts DC to usable AC electricity for your home</li>
+          <li><strong>Power your home</strong> - Use the electricity for your appliances, with excess going to the grid</li>
+        </ul>
+        <p class="solar-note">With battery storage, you can store excess energy for use at night or during outages.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="benefits" id="benefits">
     <div class="benefits-grid">
       <div class="benefits-content">
@@ -1030,7 +1136,7 @@
         </ul>
       </div>
       <div class="benefits-image">
-        <svg viewBox="0 0 24 24"><path d="M12 3L4 9v12h16V9l-8-6zm0 2.5L18 10v9H6v-9l6-4.5z"/><circle cx="12" cy="14" r="3"/></svg>
+        <img src="/images/solar-panel-diagram.webp" alt="Solar panel diagram showing how solar energy works" />
       </div>
     </div>
   </section>
