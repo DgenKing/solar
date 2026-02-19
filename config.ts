@@ -1,7 +1,7 @@
-// API Configuration - hardcoded directly (NOT using dotenv - it loads wrong file)
+// API Configuration - uses environment variables
 export const CONFIG = {
-  // DeepSeek API key
-  DEEPSEEK_API_KEY: "sk-244095dff8304953b4a69ddca64d2a37",
+  // DeepSeek API key - set via DEEPSEEK_API_KEY environment variable
+  DEEPSEEK_API_KEY: process.env.DEEPSEEK_API_KEY || "",
 
   // Model settings
   MODEL: "deepseek-chat",
